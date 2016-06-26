@@ -1,26 +1,22 @@
 {
-  "name": "WPGulpTheme",
-  "author": "ahmadawais",
+  "name": "SurgePack",
   "version": "1.0.0",
-  "license": "GPL-2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ahmadawais/WPGulpTheme"
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
+  },
+  "dependencies": {
+    "extract-text-webpack-plugin": "^1.0.1",
+    "sass-loader": "^3.2.2",
+    "style-loader": "^0.13.1",
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-filter": "^4.0.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-merge-media-queries": "^0.2.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.5.3",
-    "gulp-uglifycss": "^1.0.6"
+    "css-loader": "^0.23.1",
+    "webpack": "^1.13.1",
+    "gulp": "^3.9.1"
   }
 }

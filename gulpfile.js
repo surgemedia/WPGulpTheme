@@ -33,24 +33,24 @@ var productURL           = './'; // Theme/Plugin URL. Leave it like it is, since
 
 
 var styleSRC             = './assets/css/style.scss'; // Path to main .scss file.
-var styleDestination     = './'; // Path to place the compiled CSS file.
+var styleDestination     = './dist/'; // Path to place the compiled CSS file.
 // Defualt set to root folder.
 
 
 var jsVendorSRC          = './assets/js/vendors/*.js'; // Path to JS vendors folder.
-var jsVendorDestination  = './assets/js/'; // Path to place the compiled JS vendors file.
+var jsVendorDestination  = './dist/js/'; // Path to place the compiled JS vendors file.
 var jsVendorFile         = 'vendors'; // Compiled JS vendors file name.
 // Default set to vendors i.e. vendors.js.
 
 
 var jsCustomSRC          = './assets/js/custom/*.js'; // Path to JS custom scripts folder.
-var jsCustomDestination  = './assets/js/'; // Path to place the compiled JS custom scripts file.
+var jsCustomDestination  = './dist/js/'; // Path to place the compiled JS custom scripts file.
 var jsCustomFile         = 'custom'; // Compiled JS custom file name.
 // Default set to custom i.e. custom.js.
 
 
 var imagesSRC            = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
-var imagesDestination    = './assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
+var imagesDestination    = './dist/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 
 // Watch files paths.
@@ -171,7 +171,6 @@ gulp.task('styles', function () {
 		.pipe( sourcemaps.init( { loadMaps: true } ) )
 		.pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
 
-		.pipe( sourcemaps.write ( styleDestination ) )
 		.pipe( gulp.dest( styleDestination ) )
 
 		.pipe(filter('**/*.css')) // Filtering stream to only css files
