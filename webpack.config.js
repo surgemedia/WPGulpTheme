@@ -11,7 +11,16 @@ module.exports = {
      {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
-      }
+      },
+      {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file?name=/fonts/[name].[ext]'
+        },
+        {
+                test: /\.(png|jpg|jpeg|bmp)$/,
+                loader: 'file?name=/imgs/[name].[ext]'
+        }
+        
     ]
   },
   sassLoader: { },

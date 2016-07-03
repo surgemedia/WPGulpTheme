@@ -1,0 +1,81 @@
+/*==================================
+=            Typograhpy            =
+==================================*/
+
+
+@keyframes MyAnimation {
+    0% { left: 0; }	
+   50% { left: 200px; }	
+  100% { left: 20px; }	
+};
+body {
+animation: MyAnimation 2s;
+}
+
+body {
+    font-family: $primary-font;
+    line-height: 1;
+    font-size: 10px;
+    background-repeat: no-repeat;
+    font-weight: 100;
+    color: #000;
+}
+
+h1,
+.h1 {
+	font-family: $primary-font;
+	font-style:normal;
+	font-weight:500;
+	text-shadow:none;
+	font-size:6em;
+}
+h2,
+.h2  {
+	font-family:$secondary-font;
+	 text-shadow:none;
+	font-weight:100;
+	font-size:4em;
+}
+h2.alt {
+	font-family: $primary-font;
+	font-weight:400;
+	color:$teal;
+	margin:1em 0em;
+	font-size:4em;
+}
+h3 {
+	font-size:3.6em;
+}
+
+p {
+	font-family:$secondary-font;
+	font-weight:400;
+	font-size:1.4em;
+	line-height:1.7em;
+}
+h2,.h2 { font-size:6em;   }
+.h3 { font-size:3.6em; }
+
+.p1 { font-size:6em; line-height:1.7em;  }
+.p2 { font-size:4.8em; line-height:1.7em;}
+.p3 { font-size:3.6em; line-height:1.7em;  }
+.p4 { font-size:3em; line-height:1.7em;  }
+.p5 { font-size:2.4em; line-height:1.7em;  }
+.p6 { @extend .p5;
+		color:rgba(#000,0.7);
+    	font-size: 2em;
+    	line-height: 1.8em;
+    }
+
+
+.padding-6 {
+	padding-top:4em;
+	padding-bottom:4em;  
+}
+.bg-cover {
+	background-size:cover;
+}
+section {
+	    border-top: 1px solid #FF00B1;
+    border-bottom: 1px solid #FF00B1;
+}

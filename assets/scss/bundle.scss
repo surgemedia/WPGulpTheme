@@ -1,0 +1,66 @@
+@import "atom/variables";
+@import "bower";
+
+// /*============================
+// =            Atom            =
+// ============================*/
+@import "atom/fonts";
+@import "atom/global";
+
+/*================================
+=            Molecule            =
+================================*/
+@import "molecule/buttons";
+@import "molecule/comments";
+@import "molecule/forms";
+@import "molecule/grid";
+@import "molecule/wp-classes";
+
+/*================================
+=            Organism            =
+================================*/
+@import "organism/paragraph-overlay";
+
+/*=================================
+=            Templates            =
+=================================*/
+@import "template/header";
+@import "template/sidebar";
+@import "template/footer";
+@import "template/pages";
+@import "template/posts";
+@import "template/tinymce";
+
+/*----------  RESPONSIVE  ----------*/
+
+
+@media (max-width: $screen-sm-max) {
+	@import "res/_res-xs-sm.scss";
+}
+@media (max-width: $screen-xs-max) {
+	@import "res/_res-xs.scss";
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	@import "res/_res-sm.scss";
+}
+@media (min-width: $screen-md-min) {
+	@import "res/_res-md-lg.scss";
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+	@import "res/_res-md.scss";
+}
+/* Portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait) { 
+	//@import "res/_res-800-portrait.scss";
+}
+@media (min-width: $screen-lg-min) {
+	@import "res/_res-lg.scss";
+}
+@media (min-width: $screen-lg-min) and (max-width: 1439px) {
+	@import "res/_res-lg-1440.scss";
+}
+@media (min-width: 1440px){
+	@import "res/_res-1440.scss";
+}
