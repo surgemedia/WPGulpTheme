@@ -1,4 +1,4 @@
-<section class="container-fluid">
+<section <?php echo $vars['section_id'].' '.$vars['section_classes'].' '.$vars['section_style'] ?>>
 <?php
 	/*=====================================
 	=            Get Files            =
@@ -11,8 +11,8 @@
 	/*=====================================
 	=            Setup Classes            =
 	=====================================*/
-	$vars['element-1'][0]['class'] = 'col-md-4'; //because i know this from the file name
-	$vars['element-2'][0]['class'] = 'col-md-8'; //because i know this from the file name
+	$vars['element-1'][0]['class'] = 'col-md-8'; //because i know this from the file name
+	$vars['element-2'][0]['class'] = 'col-md-4'; //because i know this from the file name
 
 	/*==================================
 	=            Setup Vars            =

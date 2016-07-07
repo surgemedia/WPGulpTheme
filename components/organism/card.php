@@ -1,4 +1,4 @@
-<section class="container padding-6 <?php echo $vars['class'] ?>">
+<section <?php echo $vars['section_id'].' '.$vars['section_classes'].' '.$vars['section_style'] ?>>
 <?php
 			//debug($vars);
 			/*=============================================

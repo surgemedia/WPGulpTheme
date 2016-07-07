@@ -1,4 +1,4 @@
-<div class="">
+<div class="molecule related-items">
 	   <?php
 
 			  // WP_Query arguments

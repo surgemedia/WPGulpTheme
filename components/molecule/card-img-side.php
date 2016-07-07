@@ -1,5 +1,5 @@
 <?php
-	//debug($vars['image_position']);
+//	debug($vars);
 
 
  if($vars['image_position'] == 'Right Side'){ 
@@ -9,16 +9,17 @@
 		$vars['card_class'] = 'pull-right';
 		$vars['img_class'] = 'pull-left';
 	}
+	
 ?>
-<article class="col-md-6 <?php echo $vars['class'] ?> <?php echo $vars['card_class'] ?>">
+<article class="col-md-6 <?php echo $vars['class'] ?> <?php echo $vars['card_class'] ?> molecule card-img-side">
+<div class="wrapper">	
 	<hgroup>
 		<h6><?php echo $vars["subtitle"]?></h6>
 		<h1><?php echo $vars["title"]?></h1>
 	</hgroup>
 	<?php echo apply_filters('the_content',  $vars["content"]); ?>
-<?php if(isset($vars['button'][0]['text']) != 0){ ?>
 		<?php if(is_array($vars['button']) == 1){ ?>
-			<?php
+		<?php if(isset($vars['button'][0]['text']) != 0){ 
 				get_component([
 								'template' => 'atom/link',
 								'vars' => [
@@ -27,11 +28,12 @@
 									"link" => $vars['button'][0]['link'],
 									]
 				]);
+				 }
 																 ?>
 		<?php } else { ?>
 		<?php echo $vars['button']; ?>
 		<?php } ?>
-	<?php } ?>
+		</div>
 </article>
 <div class="col-md-6 <?php echo $vars['img_class'] ?> text-center">
 		<img class="img-responsive rounded" src="<?php echo $vars['image'] ?>" alt="">

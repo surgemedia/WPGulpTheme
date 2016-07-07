@@ -1,18 +1,36 @@
-<?php //debug($vars) ?>
-<section class="jumbotron owl-carousel bg-cover padding-6"  style="background-image:url(<?php echo $vars["image"]?>)">
-	<div class="container">
-	<?php for ($vars['i']=0; $vars['i'] < sizeof($vars['slides']); $vars['i']++) { ?>
-	<article class="item active pull-right col-md-7" style="background-image:url(<?php echo $vars['slides'][$vars["i"]]["image"]?>)">
-		<hgroup>
-			<h1><?php echo $vars['slides'][$vars["i"]]["title"] ?></h1>
-		</hgroup>
-		<?php echo apply_filters('the_content',  $vars['slides'][$vars["i"]]["content"]); ?>
-		<?php if(strlen($vars['slides'][$vars["i"]]['button'][0]['text'])){ ?>
-		<a class="btn" href="<?php echo $vars['slides'][$vars["i"]]['button'][0]['href']; ?>"><?php echo $vars['slides'][$vars["i"]]['button'][0]['text']; ?></a>
-		<?php } ?>
-	</article>
-	<?php } ?>
-	</div>
+<section class="page-heading <?php echo $vars['class'] ?>">
+	<img class="top-banner" src="<?php echo $vars["image"]; ?>" alt="">
+
+	<?php
+			/*=============================================
+			=    Card Header (Class,Subtitle,Title,Content)
+			= @components
+				+ molecule/card-header
+			=============================================*/
+			$button_array = "";
+			if(in_array("button", $vars['option'])){
+				$button_array = get_component([
+																'template' => 'atom/link',
+																'return_string' => true,
+																'vars' => [
+																			"class" => 'btn text-uppercase pull-left',
+																			"text" => $vars['button'][0]['text'],
+																			"url" => $vars['button'][0]['link_location'],
+																			'toggle' => ''
+																			]
+																]);
+														
+			}
+			get_component([ 'template' => 'molecule/card',
+											'remove_tags' =>  ['img'],
+											'vars' => [
+														"class" => 'card container padding-4',
+														"subtitle" => $vars["subtitle"],
+														"title" => $vars["title"],
+														"content" => apply_filters('the_content',  $vars["content"]),
+														"button" => $button_array
+														]
+											 ]);
+	 ?>
+
 </section>
-
-

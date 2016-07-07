@@ -1,4 +1,4 @@
-<section class="padding-0-5 <?php echo $vars['section_width']; ?>">
+<section <?php echo $vars['section_id'].' '.$vars['section_classes'].' '.$vars['section_style'] ?>>
 <?php
 	/*=====================================
 	=            Get Files            =

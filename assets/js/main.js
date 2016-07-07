@@ -12,5 +12,7 @@ require('../scss/bundle.scss');
 //anything included below will be included in the bundle.js
 //Example
 require('./_navigation.js');
+// TODO - Use NPM or BOWER
+// Hammer js
 
 
