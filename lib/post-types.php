@@ -1,9 +1,11 @@
- <?php 
-/*============================================
-	=          Testimonial - Post Type           =
-	============================================*/
-	$testimonial = new CPT([
-	    'post_type_name' => 'testimonial',
-	]);
-	$testimonial->menu_icon("dashicons-format-quote");
+<?php 
+$custom_pts = [
+  /* Utilitys */
+  'lib/post-types/testimonials.php',    // Scripts and stylesheets
+  'lib/post-types/staff.php', 
+  'lib/post-types/locations.php', 
+  'lib/post-types/events.php', 
+];
+includeRequired($custom_pts);
+
 ?>

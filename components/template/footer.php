@@ -6,6 +6,8 @@
 </footer>
 		<?php wp_footer(); ?>
 		  
-
+<div id="debug_console">
+	
+</div>
 </body>
 </html>

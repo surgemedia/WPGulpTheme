@@ -17,7 +17,7 @@ function get_component($files = Array()){
 			$compDir = 'components/'; //where are your comps (optional)
 			$errors = []; //empty error array what be be filled.
 			$return_string = false; //echo by default
-			
+			$component = false;
 			if(isset($files['vars'])){
 				$vars = $files['vars']; //gets vars
 			}
@@ -25,9 +25,13 @@ function get_component($files = Array()){
 				$return_string = $files['return_string'];
 			}
 			ob_start(); //start object buffer 
+			if(locate_template($compDir.$files['template'].'.php') != ''){
 			$component = include(locate_template($compDir.$files['template'].'.php')); //instead of echoing it, its stored 
+			}
 			if($component == false){
-				echo 'Can not find file '.$files['template'].' in dir '.$compDir;
+				$error_message = 'BUILDER: Can not find the file '.$files['template'].' in folder '.$compDir;
+				include(locate_template('components/template/no-section-warning.php'));
+				echo '<script> console.error("'.$error_message.'")</script>';
 			}
 			$component = ob_get_clean(); //set var to the stored buffer ( i believe this flats the vars)
 			/*=================================================
@@ -45,9 +49,11 @@ function get_component($files = Array()){
 			=================================================*/
 			if(isset($files['remove_tags']) && sizeof($files['remove_tags']) > 0){
 				$tags = [];
-
-				for ($i=0; $i < sizeof($files['remove_tags']); $i++) { 
-					$component = strip_tags_content($component,'<'.$files['remove_tags'][$i].'>',TRUE);
+				$sizeof = sizeof($files['remove_tags']);
+				for ($i=0; $i < $sizeof; $i++) { 
+					if(isset($files['remove_tags'][$i])){
+						$component = strip_tags_content($component,'<'.$files['remove_tags'][$i].'>',TRUE);
+					}	
 				}
 			}
 			/*================================================

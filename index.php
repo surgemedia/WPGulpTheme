@@ -1,20 +1,14 @@
-<?php
-/**
- * Index File
- */
-get_component([ 'template' => 'template/head', ]);
-get_component([ 'template' => 'template/header', ]);
-?>
+<?php get_template_part('components/molecule/page', 'header'); ?>
 
-<div class="wrap">
-	<div class="content">
-		<h1>WP Gulp Boilerplate!</h1>
-		<p>A simple to use gulp boilerplate for gulp beginners and WordPress developers.</p>
-	</div>
-	<!-- /.content -->
-</div>
-<!-- /.wrap -->
+<?php if (!have_posts()) : ?>
+  <div class="alert alert-warning">
+    <?php _e('Sorry, no results were found.', 'sage'); ?>
+  </div>
+  <?php get_search_form(); ?>
+<?php endif; ?>
 
+<?php while (have_posts()) : the_post(); ?>
+  <?php get_template_part('components/molecule/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+<?php endwhile; ?>
 
-
-<?php get_component([ 'template' => 'template/footer', ]); ?>
+<?php the_posts_navigation(); ?>
