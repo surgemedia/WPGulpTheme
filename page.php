@@ -1,5 +1,9 @@
 
 <?php
+
+ get_component([ 'template' => 'template/head', ]);
+ get_component([ 'template' => 'template/header', ]);
+ 
 if (is_front_page()){ ?>
 <?php 
 	get_component([ 'template' => 'organism/homepage-heading',
@@ -35,7 +39,7 @@ if (is_front_page()){ ?>
 <?php
 $layout_builder = get_field('layout');
 //is there block?
-if(isset($layout_builder[0]) && !is_front_page()){
+if(isset($layout_builder[0])){
 foreach ($layout_builder as $key => $value) {
 	$section_file = $value['acf_fc_layout'];
 	if(isset($section_file)){
@@ -72,5 +76,10 @@ foreach ($layout_builder as $key => $value) {
     </footer>
 		</article>
 </section>
-<?php } ?>
+<?php };
+
+ get_component([ 'template' => 'template/footer', ]);
+
+ ?>
+
 </div>

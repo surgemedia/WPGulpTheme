@@ -6,7 +6,7 @@ var reload       = browserSync.reload; // For manual browser reload.
 var projectPHPWatchFiles = './**/*.php'; // Path to all PHP files.
 var sassWatchFiles      = './assets/scss/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var JSWatchFiles   = './assets/js/*.js'; // Path to all vendors JS files.
-var projectURL           = 'baseinstall.dev'; // Project URL. Could be something like localhost:8888.
+var projectURL           = 'localhost'; // Project URL. Could be something like localhost:8888.
 
 // Browsers you care about for autoprefixing.
 // Browserlist https://github.com/ai/browserslist
@@ -42,7 +42,7 @@ gulp.task('webpack', shell.task([
 
  		// Inject CSS changes.
  		// Commnet it to reload browser for every CSS change.
- 		// injectChanges: true,
+ 		injectChanges: true,
 
  		// Use a specific port (instead of the one auto-detected by Browsersync).
  		port: 3000,
