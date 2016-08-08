@@ -13,39 +13,39 @@
 @import "molecule/buttons";
 @import "molecule/comments";
 @import "molecule/forms";
-@import 'molecule/calendar.scss'
-@import 'molecule/card.scss'
-@import 'molecule/card-img-side.scss'
-@import 'molecule/image.scss'
-@import 'molecule/image-grid.scss'
-@import 'molecule/img-text.scss'
-@import 'molecule/list.scss'
-@import 'molecule/map.scss'
-@import 'molecule/oembed.scss'
-@import 'molecule/page-header.scss'
-@import 'molecule/related-items.scss'
-@import 'molecule/slider.scss'
-@import 'molecule/tabs.scss'
+@import 'molecule/calendar'
+@import 'molecule/card'
+@import 'molecule/card-img-side'
+@import 'molecule/image'
+@import 'molecule/image-grid'
+@import 'molecule/img-text'
+@import 'molecule/list'
+@import 'molecule/map'
+@import 'molecule/oembed'
+@import 'molecule/page-header'
+@import 'molecule/related-items'
+@import 'molecule/slider'
+@import 'molecule/tabs'
 
 /*================================
 =            Organism            =
 ================================*/
-@import 'organism/big-column-small-column.scss'
-@import 'organism/card.scss'
-@import 'organism/comments.scss'
-@import 'organism/contact.scss'
-@import 'organism/floating.scss'
-@import 'organism/four-columns.scss'
-@import 'organism/homepage-heading.scss'
-@import 'organism/image-grid.scss'
-@import 'organism/one-column.scss'
-@import 'organism/page-heading.scss'
-@import 'organism/related-items.scss'
-@import 'organism/sidebar.scss'
-@import 'organism/slider.scss'
-@import 'organism/small-column-big-column.scss'
-@import 'organism/three-columns.scss'
-@import 'organism/two-columns.scss'
+@import 'organism/big-column-small-column'
+@import 'organism/card'
+@import 'organism/comments'
+@import 'organism/contact'
+@import 'organism/floating'
+@import 'organism/four-columns'
+@import 'organism/homepage-heading'
+@import 'organism/image-grid'
+@import 'organism/one-column'
+@import 'organism/page-heading'
+@import 'organism/related-items'
+@import 'organism/sidebar'
+@import 'organism/slider'
+@import 'organism/small-column-big-column'
+@import 'organism/three-columns'
+@import 'organism/two-columns'
 
 /*=================================
 =            Templates            =
@@ -61,32 +61,32 @@
 
 
 @media (max-width: $screen-sm-max) {
-	@import "res/_res-xs-sm.scss";
+	@import "res/_res-xs-sm";
 }
 @media (max-width: $screen-xs-max) {
-	@import "res/_res-xs.scss";
+	@import "res/_res-xs";
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-	@import "res/_res-sm.scss";
+	@import "res/_res-sm";
 }
 @media (min-width: $screen-md-min) {
-	@import "res/_res-md-lg.scss";
+	@import "res/_res-md-lg";
 }
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-	@import "res/_res-md.scss";
+	@import "res/_res-md";
 }
 /* Portrait */
 @media 
   (max-device-width: 800px) 
   and (orientation: portrait) { 
-	//@import "res/_res-800-portrait.scss";
+	//@import "res/_res-800-portrait";
 }
 @media (min-width: $screen-lg-min) {
-	@import "res/_res-lg.scss";
+	@import "res/_res-lg";
 }
 @media (min-width: $screen-lg-min) and (max-width: 1439px) {
-	@import "res/_res-lg-1440.scss";
+	@import "res/_res-lg-1440";
 }
 @media (min-width: 1440px){
-	@import "res/_res-1440.scss";
+	@import "res/_res-1440";
 }

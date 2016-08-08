@@ -1,6 +1,11 @@
 <?php 
 function get_section_options($vars){
-	$search = array_search("show_advanced", array_keys($vars));
+	$search;
+	if(array_search("show_advanced", array_keys($vars) > 0)) {
+		$search = array_search("show_advanced", array_keys($vars));
+	} elseif (array_search("advanced_options", array_keys($vars)) > 0) {
+		$search = array_search("advanced_options", array_keys($vars));
+	};
 	$tempVars = array_slice($vars, $search);
 	$sizeof = sizeof($tempVars);
 	foreach ($tempVars as $key => $value) {

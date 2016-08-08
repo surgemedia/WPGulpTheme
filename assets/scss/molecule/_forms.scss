@@ -13,3 +13,162 @@
   @extend .btn;
   @extend .btn-default;
 }
+.form {
+	padding:2em 6em 4em 6em;
+	overflow:hidden;
+}
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+@include placeholder {
+    color: $grey-dark;
+    font-weight:300;
+}
+
+.gform_wrapper{
+	max-width:100%;
+	form{
+		.gform_heading{
+			text-align: center;
+			width: 100%;
+			.gform_title{
+				@extend .h1;
+				margin-bottom: 1em;
+			}
+			.gform_description{
+				@extend .p1;
+			}
+		}
+		.gform_body {
+			.gform_fields {
+				@extend .list-inline;
+				.gfield {
+					width:100%;
+					clear:none;
+					.gfield_label {
+							// display: none;
+						font-size:1.3em;
+						.gfield_required {
+							display: none;
+						}
+					}
+					.ginput_container{
+						input,select,textarea{
+							@extend .form-control;
+							border:2px solid $grey-dark;
+							border-radius:0;
+						}
+						input{
+							height: 4em;
+							margin-bottom:0.7em;
+							&:focus {
+											border-color:$color1;
+											box-shadow:none;
+										}
+						}
+						select{
+							height: 4em;
+						}
+						textarea{
+							height:12em;
+							&:focus {
+											border-color:$color1;
+											box-shadow:none;
+										}
+						}
+						.chosen-container {
+								border:4px solid $grey-dark;
+								background:#fff;
+								width:100% !important;
+							a.chosen-single {
+								    background: #fff;
+								    border-radius: 0;
+								    border: 0;
+								    height: 4em;
+								    line-height: 1em;
+									span {
+										height: 4em;
+    									line-height: 4em;
+    									color:#999999;
+									}
+									div {
+										width:4em;
+										background: none;
+										background-image: none;
+ 
+										b {
+											//arrow
+											//@extend .icon-font-core;
+											background-image: none !important;
+											border-left: 4px solid $grey-dark;
+										    font-size: 2.5em;
+										    color: $grey-dark;
+										    width: 100%;
+										    text-align: center;
+										    height: 100%;
+										    line-height: 1.7em;
+											&:before { 
+												//@extend .icon-drop-arrow-extend;
+											}
+										}
+									}
+							}
+							.chosen-drop {
+								.chosen-search {
+									padding: 0px;
+									input {
+										height:3em;
+										&:focus {
+											border-color:$color1;
+											box-shadow:none;
+										}
+									}
+								}
+								ul.chosen-results {
+									$border:4px solid $grey-dark;
+									border-left:$border;
+									border-right:$border;
+									border-bottom:$border;
+									box-shadow:none;
+									background:#fff;
+									li {
+										background:#fff;
+										color:#999999;
+										padding:1em;
+
+									}
+									li.highlighted {
+										background:$color1; 	
+										color:#fff;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.gform_footer {
+			@extend .col-md-6;
+			@extend .pull-left;
+			padding:0em;
+			&.secure {
+				margin-top: 1em;
+			}
+			text-align: right;
+			input[type=submit],
+			input {
+				@extend .btn;
+			@extend .pull-left;
+			background:$color1;
+			color:#fff;
+
+				font-size:2em;
+			}
+		}
+	}
+}
